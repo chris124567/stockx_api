@@ -1,8 +1,6 @@
 """
 This file queries the StockX API for search results.
 """
-
-import json
 import requests
 
 from http_util import HEADERS
@@ -37,11 +35,7 @@ def search_tag(tag, page):
     search_url = "https://stockx.com/api/browse?_tags=%s&page=%d" % (tag,
                                                                      page)
     try:
-        response = requests.get(search_url, headers=HEADERS)
-    except requests.exceptions.RequestException:
-        return None
-    try:
-        response_json = json.loads(response.text)
-    except JSON_ERRORS:
+        response_json = requests.get(search_url, headers=HEADERS).json()
+    except (JSON_ERRORS, requests.exceptions.RequestException):
         return None
     return response_json
