@@ -28,7 +28,8 @@ def all_brand_search_results(brand):
 
 
 def write_csv(brand):
-    """This function writes the output for every product listed in the JSON to
+    """This function writes the output for every product listed in the JSON to.
+
     <brand>.csv.
 
     The CSV includes: StockX ID, StockX URL, StockX Ticker, Title,
@@ -64,6 +65,7 @@ def write_csv(brand):
                     ])
                 except JSON_ERRORS:
                     die()
+
 
 os.mkdir(JSON_OUT_DIR)
 all_brand_search_results(BRAND)
