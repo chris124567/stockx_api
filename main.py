@@ -2,6 +2,7 @@
 """Searches (completely) for a given brand then formats the output to a csv
 file."""
 
+import os
 import csv
 import json
 
@@ -64,6 +65,6 @@ def write_csv(brand):
                 except JSON_ERRORS:
                     die()
 
-
+os.mkdir(JSON_OUT_DIR)
 all_brand_search_results(BRAND)
 write_csv(BRAND)
