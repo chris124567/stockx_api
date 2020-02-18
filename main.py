@@ -28,9 +28,7 @@ def all_brand_search_results(brand):
 
 
 def write_csv(brand):
-    """This function writes the output for every product listed in the JSON to.
-
-    <brand>.csv.
+    """This function writes the output for every product listed in the JSON to <brand>.csv.
 
     The CSV includes: StockX ID, StockX URL, StockX Ticker, Title,
     Release Date, Brand, Category, Colorway, Gender, Retail Price,
